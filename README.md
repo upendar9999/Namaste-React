@@ -1,7 +1,7 @@
 
-#Namaste React 
+# Namaste React 
 
-#Parcel
+# Parcel
 - Dev Build
 - Local Server
 - HMR (Hot Module Replacement)
@@ -44,7 +44,12 @@ Two types of Export and import
   - Named export and import
 
 
- #React Hooks
+ # React Hooks
   - Normal JS utility functions written by facebook developers
   - useState() - Superpowerful state variable in react
   - useEffect() - 
+
+# Two types Of Routing
+  - Client Side Routing
+  - Server Side Routing
+  
