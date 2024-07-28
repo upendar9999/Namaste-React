@@ -1,12 +1,13 @@
-import React from "react";
+import React,{lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import {Header} from "./components/Header";
 import Body from "./components/Body";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
-import About from "./components/About";
+//import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+//import Grocery from "./components/Grocery";
 
 // React.createElement => Object => HTML Element(Render)
 
@@ -21,7 +22,14 @@ import RestaurantMenu from "./components/RestaurantMenu";
 Header(logo,Nav items),Body(search,restaurant container,restaurant cards),Footer(copy rights,links,address,constact info)
 */
 //not using keys(not acceptable) << using index as keys <<<<<<<<  using unique id(best practice)
-
+// Chunking
+// Code Splitting
+// Dynamic Bundling
+// Lazy Loading
+// On Demand Loading
+// Dynamic Import
+const Grocery = lazy(()=>import("./components/Grocery") );
+const About = lazy(()=>import("./components/About") );
 const AppLayOut = ()=>{
     return (
         <div className = "App">
@@ -43,11 +51,27 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/About",
-        element: <About/>
+        element:(
+          <Suspense fallback = {<h1>
+            Loading...
+          </h1>}>
+          <About/>
+          </Suspense>
+        )
       },
       {
         path:"/contact",
         element: <Contact />
+      },
+      {
+        path:"/grocery",
+        element:(
+          <Suspense fallback = {<h1>
+            Loading...
+          </h1>}>
+           <Grocery />
+          </Suspense>
+        ),
       },
       {
         path:"/restaurants/:resId",
