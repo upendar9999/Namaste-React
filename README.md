@@ -52,4 +52,12 @@ Two types of Export and import
 # Two types Of Routing
   - Client Side Routing
   - Server Side Routing
+
+# Redux Tool Kit
+ - Install @reduxjs/toolkit and react-redux
+ - Build our Own Store
+ - Connect our store to our app
+ - Slice(cartSlice)
+ - Dispatch(action)
+ - Selector
   
