@@ -7,20 +7,20 @@ import { useSelector } from "react-redux";
 
 export const Header = ()=>{
     const [btnName,setBtnName] = useState("Login");
-     console.log("hedaer");
+     //console.log("hedaer");
     // if no dependency array => useEffect called on every render
     // if dependency array is empty => useEffect called on initial render (just once)
     // if dependency array is not empty => useEffect called everytime array gets updated
      useEffect(()=>{
-        console.log("useeffect called");
+        //console.log("useeffect called");
           },[btnName]);
           const onlineStatus = useOnlineStatus();
           const {loggedInUser} = useContext(UserContext);
-          console.log(loggedInUser);
+          //console.log(loggedInUser);
     //Subscribing to the store using the Selector
 
     const cartItems = useSelector((store)=>store.cart.items);
-    console.log(cartItems);
+    //console.log(cartItems);
 
     return (
         <div className = "flex justify-between bg-pink-100 shadow-lg mb-2 sm:bg-yellow-50 lg:bg-green-50">

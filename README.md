@@ -61,3 +61,22 @@ Two types of Export and import
  - Dispatch(action)
  - Selector
   
+
+# Types Of Testing(developer)
+ - Unit Testing
+ - Integration Testing
+ - End to End Testing - e2e testing
+
+ # Setting Testing in our App
+  - Install React Testing Library
+  - Install jest
+  - Install babel dependencies
+  - Configure Babel
+  - Configure Parcel Config file to disable default babel transpilation
+  - Jest Configuration(npx jest --init)
+  - Install jsdom Library
+  - Install @babel/preset-react to make JSX work in test cases
+  - Include @babel/preset-react inside my  babel Config
+  - Install (npm i -D @testing-library/jest-dom)
+
+

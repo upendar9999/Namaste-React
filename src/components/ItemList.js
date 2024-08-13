@@ -14,7 +14,9 @@ const ItemList = ({items,dummy})=>{
     return (
      <div>
        {items.map((item)=>(
-        <div key ={item.card.info.id} className = "p-2 m-2 border-gray-200 border-b-2 text-left flex">
+        <div 
+            data-testid="foodItems"
+            key ={item.card.info.id} className = "p-2 m-2 border-gray-200 border-b-2 text-left flex">
             <div className="w-40 p-4">
               <div className="absolute">
                 <button className="p-2 mx-16 rounded-lg bg-white shadow-lg" onClick={()=>

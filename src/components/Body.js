@@ -12,7 +12,7 @@ const Body = ()=>{
     
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
-    console.log("Helloworld before div and use effect");
+    //console.log("Helloworld before div and use effect");
 
     useEffect(()=>{
     fetchData();
@@ -22,10 +22,10 @@ const Body = ()=>{
         const data = await fetch(
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4398772&lng=78.36573419999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
-    console.log("Helloworld inside fectch");
-    console.log(json);
+    //console.log("Helloworld inside fectch");
+    //console.log(json);
     const rests= json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    console.log(rests);
+    //console.log(rests);
     setListOfRestaurants(rests);
     setfilteredListOfRestaurants(rests);
       
@@ -48,6 +48,7 @@ const Body = ()=>{
             <div className = "filter flex">
                 <div className = "search m-4 p-4">
                     <input type = "text" 
+                    data-testid = "searchInput"
                     className = "border border-solid border-black" value = {searchText} onChange = {(e)=>{
                         setSearchText(e.target.value)}
                         }/>
@@ -63,7 +64,7 @@ const Body = ()=>{
                     const filteredList = listOfRestaurants.filter((res) => res.info.avgRating > 4);
                     setfilteredListOfRestaurants(filteredList);
 
-                    console.log(listOfRestaurants);
+                    //console.log(listOfRestaurants);
 
                 }}>Top Rated Restaurants </button> 
                 </div>
@@ -90,7 +91,7 @@ const Body = ()=>{
                 ))
               }
             </div>
-           {console.log("inside body")}
+           {/*console.log("inside body") */}
         </div>
     );
 };
